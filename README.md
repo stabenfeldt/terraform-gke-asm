@@ -6,7 +6,7 @@ This repo is a companion repo to the [Provision a GKE Cluster learn guide](https
 ### Create a cluster
 `terraform apply`
 ### Connect to the newly created cluster:
- `gcloud container clusters get-credentials techs-internal-staging-k8s-gke --zone europe-west1`
+ `gcloud container clusters get-credentials $YOUR_CLUSTER_NAME --zone europe-west1`
 
 ### Deploy Hello World:
 ```
