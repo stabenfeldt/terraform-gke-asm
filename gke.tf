@@ -30,8 +30,15 @@ resource "google_container_cluster" "primary" {
   remove_default_node_pool = true
   initial_node_count       = 1
 
-  network    = google_compute_network.vpc.name
-  subnetwork = google_compute_subnetwork.subnet.name
+  #network    = google_compute_network.custom.name
+  #subnetwork = google_compute_subnetwork.custom.name
+  default_max_pods_per_node = 20 
+
+
+  #ip_allocation_policy {
+  #  cluster_secondary_range_name  = "services-range"
+  #  services_secondary_range_name = google_compute_subnetwork.custom.secondary_ip_range.1.range_name
+  #}
 }
 
 # Separately Managed Node Pool
