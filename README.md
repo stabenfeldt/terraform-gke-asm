@@ -20,27 +20,3 @@ Find the IP
 kubectl get service hello-server
 curl 34.79.233.216 #=> Hello, world!
 
-
-# Setup VPC-native
-## VPC
-#resource "google_compute_network" "custom" {
-#  name                    = "${var.project_id}-vpc"
-#  auto_create_subnetworks = "false"
-#}
-#
-## Subnet
-#resource "google_compute_subnetwork" "custom" {
-#  name          = "${var.project_id}-subnet"
-#  ip_cidr_range = "10.10.0.0/24"
-#  region        = var.region
-#  network       = google_compute_network.custom.name
-#  secondary_ip_range {
-#    range_name    = "services-range"
-#    ip_cidr_range = "192.168.1.0/25"
-#  }
-#
-#  secondary_ip_range {
-#    range_name    = "pod-ranges"
-#    ip_cidr_range = "192.168.64.0/25"
-#  }
-#}
