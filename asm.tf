@@ -3,5 +3,8 @@ module "asm" {
   project_id        = var.project_id
   cluster_name      = resource.google_container_cluster.primary.name
   cluster_location  = resource.google_container_cluster.primary.location
-  enable_cni        = true
+  enable_cni        = false
 }
+
+
+
